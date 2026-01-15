@@ -1,16 +1,42 @@
-# shiftmate
+# ShiftMate
 
-A new Flutter project.
+ShiftMate is a mobile application being built to help shift workers manage their work schedules, routines, and personal productivity more effectively.
 
-## Getting Started
+The app is designed with people who work long, rotating day/night shifts in mind—where consistency is hard, fatigue is real, and structure matters.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🎯 Purpose
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ShiftMate aims to:
+- Provide a simple, focused dashboard for shift-based workers
+- Help users transition between work shifts with better structure
+- Serve as a practical, real-world Flutter project showcasing clean architecture and state management
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is also part of my transition into full-time software engineering.
+
+---
+
+## 🚀 Current Features
+
+- Login screen scaffold
+- Dashboard screen scaffold
+- Named route navigation
+- Clean project setup with Flutter
+- Git version control with incremental commits
+
+---
+
+## 🛠 Tech Stack
+
+- **Flutter** (Mobile UI)
+- **Dart**
+- **Provider** (state management – planned/ongoing)
+- **Git & GitHub** (version control)
+
+Backend services will be introduced in later phases.
+
+---
+
+## 📁 Project Structure
+
