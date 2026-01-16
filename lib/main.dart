@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shiftmate/providers/shift_provider.dart';
 import 'package:shiftmate/screens/dashboard_screen.dart';
 import 'package:shiftmate/screens/login_screen.dart';
+import 'package:provider/provider.dart';
+
 
 void main () {
   runApp(const MyApp());
@@ -10,15 +13,19 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build (BuildContext context) {
-    return MaterialApp(
-      title: 'ShiftMate',
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const LoginScreen(),
-        '/dashboard': (context) => const DashboardScreen(),
-      },
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => ShiftProvider(),
+      child: MaterialApp(
+        title: 'ShiftMate',
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const LoginScreen(),
+          '/dashboard': (context) => const DashboardScreen(),
+        },
+      ),
     );
   }
+
 }
