@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shiftmate/providers/shift_provider.dart';
 
+import '../providers/auth_provider.dart';
+
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
@@ -42,6 +44,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
               'Selected: ${shiftProvider.currentShift}',
               style: const TextStyle(fontSize: 16),
             ),
+
+          const SizedBox(height: 16,),
+
+          ElevatedButton(
+            onPressed: () {
+              context.read<AuthProvider>().logout();
+            },
+            child: const Text('Logout'),
+          ),
+
         ],
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/auth_provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -12,7 +14,7 @@ class LoginScreen extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/dashboard');
+              context.read<AuthProvider>().login();
             },
             child: const Text('Goto Dashboard'),
           ),
