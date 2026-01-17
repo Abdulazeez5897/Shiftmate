@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ShiftProvider extends ChangeNotifier {
   final List<String> _shifts = [
@@ -12,8 +13,20 @@ class ShiftProvider extends ChangeNotifier {
   List<String> get shifts => _shifts;
   String? get currentShift => _currentShift;
 
-  void selectShift(String shift) {
+  ShiftProvider() {
+    _loadShift();
+  }
+
+  Future<void> _loadShift() async {
+    final prefs = await SharedPreferences.getInstance();
+    _currentShift = prefs.getString('currentShift');
+    notifyListeners();
+  }
+
+  Future<void> selectShift(String shift) async {
     _currentShift = shift;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('currentShift', shift);
     notifyListeners();
   }
 }
